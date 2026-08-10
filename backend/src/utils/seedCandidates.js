@@ -7,115 +7,127 @@ import Candidate from "../models/Candidate.model.js";
 dotenv.config();
 
 const CANDIDATES_BY_CATEGORY = {
-  "Best Dressed Male": [
-    { name: "Destiny bills", department: "" },
-    { name: "Gilbert", department: "" },
-    { name: "Osayi", department: "" },
-    { name: "Micheal", department: "" },
+  "Best Actor (Male)": [
+    { name: "Benedict Jacob", level: "100 Level" },
+    { name: "Promise Okafor", level: "200 Level" },
+    { name: "Edokpo Daniel", level: "300 Level" },
   ],
 
-  "Best Dressed Female": [
-    { name: "Rukky", department: "" },
-    { name: "Doyin", department: "" },
-    { name: "Ehis", department: "" },
-    { name: "Steph", department: "" },
-    { name: "pretty momo", department: "" },
-    { name: "Christoper Ella", department: "" },
-    { name: "Daniella", department: "" },
-    { name: "Peace", department: "" },
+  "Best Actor (Female)": [
+    { name: "Temitope Davies Idunnuoluwa", level: "100 Level" },
+    { name: "Wazzy Queensley Ifeanyi", level: "200 Level" },
+    { name: "Tsuru Ruth", level: "300 Level" },
   ],
 
-  "Most Social Student": [
-    { name: "Ifeoma", department: "" },
-    { name: "Ayomide boy", department: "" },
-    { name: "Otto", department: "" },
-    { name: "Prima", department: "" },
+  "Best Dancer (Male)": [
+    { name: "Benedict Jacob", level: "100 Level" },
+    { name: "Osayande Solomon", level: "200 Level" },
+    { name: "Ikegbue Emmanuel", level: "300 Level" },
   ],
 
-  "Class Icon": [
-    { name: "Noragbon", department: "" },
-    { name: "Black osas", department: "" },
-    { name: "loveth", department: "" },
-    { name: "Josh", department: "" },
-    { name: "Emilia", department: "" },
-    { name: "prima", department: "" },
+  "Best Dancer (Female)": [
+    { name: "Praise Prosper Osagiede", level: "100 Level" },
+    { name: "Treasurer Joseph", level: "200 Level" },
+    { name: "Efosa Martina", level: "300 Level" },
   ],
 
-  "Mr TASA": [
-    { name: "Chima", department: "" },
-    { name: "Samz beat", department: "" },
-    { name: "Destiny bills", department: "" },
-    { name: "Jason", department: "" },
-    { name: "Osayi", department: "" },
-    { name: "Micheal", department: "" },
+  "Best Director (Male)": [{ name: "Emmanuel Nwaebichi", level: "300 Level" }],
+
+  "Best Director (Female)": [{ name: "Ugiagbe Promise", level: "300 Level" }],
+
+  "Best Costumier (Male)": [
+    { name: "Benedict Jacob", level: "100 Level" },
+    { name: "Godwin Oviawe", level: "200 Level" },
+    { name: "Ikegbue Emmanuel", level: "300 Level" },
   ],
 
-  "Best Student Politician": [
-    { name: "Isreal", department: "" },
-    { name: "De ambassador", department: "" },
-    { name: "pretty momo", department: "" },
-    { name: "Paul", department: "" },
-    { name: "Hussein", department: "" },
+  "Best Costumier (Female)": [
+    { name: "Idahor John Osarumwense", level: "100 Level" },
+    { name: "Angela Christianah Nicolas", level: "200 Level" },
+    { name: "Ogbeta Blessing", level: "300 Level" },
   ],
 
-  "Most Talented Student": [
-    { name: "Dominic", department: "" },
-    { name: "Abundance", department: "" },
-    { name: "Godsent", department: "" },
-    { name: "Otto", department: "" },
-    { name: "Comrade", department: "" },
+  "Political Guru (Male)": [
+    { name: "Omoruyi Sylvester", level: "100 Level" },
+    { name: "Dauda Favour", level: "200 Level" },
+    { name: "Emmanuel Nwaebichi", level: "300 Level" },
   ],
 
-  "Most Creative Student": [
-    { name: "Precious ewomazino", department: "" },
-    { name: "Ifeoma", department: "" },
-    { name: "Noragbon", department: "" },
-    { name: "Paulina", department: "" },
-    { name: "osas black", department: "" },
+  "Political Guru (Female)": [
+    { name: "Mercy Ejebe", level: "200 Level" },
+    { name: "Happy Osuware", level: "300 Level" },
   ],
 
-  "Most Influential Student": [
-    { name: "Ifeoma", department: "" },
-    { name: "Black", department: "" },
-    { name: "Otto", department: "" },
-    { name: "Gt", department: "" },
-    { name: "Favourite", department: "" },
-    { name: "Jason", department: "" },
-    { name: "Ayo boy", department: "" },
+  "Sportsman of the Year (Male)": [
+    { name: "Oviawe Godwin", level: "200 Level" },
+    { name: "Osazuwa Godstime", level: "300 Level" },
   ],
 
-  "Most Charismatic Student": [
-    { name: "ifeoma", department: "" },
-    { name: "Isoken", department: "" },
-    { name: "Gilbert", department: "" },
-    { name: "Comrade", department: "" },
-    { name: "Kim", department: "" },
-    { name: "Sharon", department: "" },
+  "Sportsman of the Year (Female)": [
+    { name: "Gowon Esther", level: "200 Level" },
+    { name: "Abu Blessing", level: "300 Level" },
   ],
 
-  "Most Enterprising Student": [
-    { name: "Nancy", department: "" },
-    { name: "Noragbon", department: "" },
-    { name: "Essence respire", department: "" },
-    { name: "Loveth", department: "" },
-    { name: "Mark", department: "" },
+  "Most Influential (Male)": [
+    { name: "Dauda Favour", level: "100 Level" },
+    { name: "Destiny Osakhunmen Osagie", level: "200 Level" },
+    { name: "Abu Joseph", level: "300 Level" },
   ],
 
-  "Miss TASA": [
-    { name: "Rukky", department: "" },
-    { name: "Bolaji", department: "" },
-    { name: "Somto", department: "" },
-    { name: "Ehis", department: "" },
-    { name: "Steph", department: "" },
-    { name: "Susan", department: "" },
-    { name: "Tega", department: "" },
+  "Most Influential (Female)": [
+    { name: "Owoicho Ochanya Blessing", level: "100 Level" },
+    { name: "Igumao Edith", level: "200 Level" },
+    { name: "Agape Anthony", level: "300 Level" },
   ],
 
-  "Award for Academic Excellence": [
-    { name: "pearl", department: "" },
-    { name: "Paul", department: "" },
-    { name: "Destiny bills", department: "" },
-    { name: "IGHOMWONYI PRAISE OFURE", department: "" },
+  "Best Set Designer": [
+    { name: "Prince Efosa Enadeghe", level: "200 Level" },
+    { name: "Benjamin Chinonso", level: "300 Level" },
+  ],
+
+  "Best Supporting Actor (Male)": [
+    { name: "Joseph Bernard", level: "100 Level" },
+    { name: "Oyewale Oluwatobiloba", level: "200 Level" },
+    { name: "Osaro Evidence", level: "300 Level" },
+  ],
+
+  "Best Supporting Actor (Female)": [
+    { name: "Tongo Beatrice", level: "100 Level" },
+    { name: "Osifo Faith Omosefe", level: "200 Level" },
+    { name: "Azeez Rachel", level: "300 Level" },
+  ],
+
+  "Thespian of the Year": [
+    { name: "Oyamenda Ephraim", level: "200 Level" },
+    { name: "Osaro Evidence", level: "300 Level" },
+  ],
+
+  "Best Stage Manager": [
+    { name: "Amayo Unity", level: "200 Level" },
+    { name: "Ugiagbe Promise", level: "300 Level" },
+  ],
+
+  "Entrepreneur of the Year": [
+    { name: "Oyewale Oluwatobiloba", level: "200 Level" },
+    { name: "Jenny's Hair Makeover", level: "300 Level" },
+  ],
+
+  "Best Content Creator": [
+    { name: "Chaos Creators", level: "100 Level" },
+    { name: "Diamond Secret", level: "200 Level" },
+    { name: "VB Glam", level: "300 Level" },
+  ],
+
+  "Best Drummer": [
+    { name: "Ezenagu Praise Somtochukwu", level: "100 Level" },
+    { name: "Isaac Newton", level: "200 Level" },
+    { name: "Desmond Nwachukwu", level: "300 Level" },
+  ],
+
+  "Music Artist of the Year": [
+    { name: "Energy", level: "100 Level" },
+    { name: "Derek More", level: "200 Level" },
+    { name: "Billy", level: "300 Level" },
   ],
 };
 
@@ -165,8 +177,8 @@ async function seedCandidatesForCategory(categoryName, nominees) {
 
     await Candidate.create({
       name: nominee.name.trim(),
-      department: nominee.department?.trim() || "",
-      level: "",
+      department: "",
+      level: nominee.level?.trim() || "",
       photo: "",
       candidateNumber: nextNumber,
       event: event._id,

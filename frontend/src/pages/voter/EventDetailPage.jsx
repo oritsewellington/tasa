@@ -558,6 +558,11 @@ function CandidateCard({
               {candidate.department}
             </p>
           )}
+          {candidate.level && (
+            <p className="text-white/65 text-[11px] mt-0.5 truncate">
+              {candidate.level}
+            </p>
+          )}
         </div>
       </div>
 
